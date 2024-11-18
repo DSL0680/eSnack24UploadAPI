@@ -1,4 +1,4 @@
-package org.esnack24api.esnack24uploadapi;
+package org.esnack24api.esnack24uploadapi.controller;
 
 import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.example.esnack24uploadapi.exception.UploadException;
+import org.esnack24api.esnack24uploadapi.exception.UploadException;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/upload/product")
@@ -23,7 +22,7 @@ import java.util.UUID;
 public class ProductFileController {
 
 
-    @Value("${org.zerock.uploadproduct}")
+    @Value("${org.esnack24.uploadproduct}")
     private String uploadFolder;
 
     @PostMapping("")
@@ -39,7 +38,7 @@ public class ProductFileController {
 
         for(MultipartFile file : files){
 
-            String fileName = UUID.randomUUID().toString()+"_"+ file.getOriginalFilename();
+            String fileName = file.getOriginalFilename();
 
             try {
 

@@ -1,10 +1,10 @@
-package org.esnack24api.esnack24uploadapi;
+package org.esnack24api.esnack24uploadapi.controller;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.example.esnack24uploadapi.exception.UploadException;
+import org.esnack24api.esnack24uploadapi.exception.UploadException;
 
 @RestControllerAdvice
 @Log4j2
